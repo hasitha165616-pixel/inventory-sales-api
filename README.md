@@ -129,15 +129,48 @@ The API returns appropriate HTTP status codes and error messages:
 - **Analytics**: Real-time calculation of revenue and sales metrics
 - **Data Integrity**: Foreign key constraints ensure data consistency
 
+Perfect for Python backend developer roles - demonstrates real-world e-commerce/inventory management skills that recruiters look for!
+
+## 📸 Screenshots
+
+### Dashboard Overview
+![Dashboard](screenshots/dashboard.png)
+
+### Product Management
+![Product Added](screenshots/product-added.png)
+
+### Sales Recording
+![Sales](screenshots/sales.png)
+
+### Sales Successfully Recorded
+![Sales Recorded](screenshots/sales-recorded.png)
+
+### Analytics Dashboard
+![Analytics](screenshots/analytics.png)
+
+### Advanced Analytics
+![Analytics 2](screenshots/analytics-2.png)
+
 ## Project Structure
 
 ```
-inventory-api/
-├── app.py              # Main Flask application
-├── models.py           # SQLAlchemy database models
-├── database.db         # SQLite database (auto-created)
-├── requirements.txt    # Python dependencies
-└── README.md          # This documentation
+inventory-sales-api/
+├── app.py                    # Main Flask application
+├── models.py                 # SQLAlchemy database models
+├── requirements.txt          # Python dependencies
+├── README.md                 # This documentation
+├── POSTMAN_SETUP.md          # Postman testing guide
+├── postman_collection.json   # Ready-to-import Postman collection
+├── .gitignore               # Git ignore rules
+├── templates/
+│   └── index.html           # Frontend interface
+└── screenshots/             # Project screenshots
+    ├── dashboard.png
+    ├── product-added.png
+    ├── sales.png
+    ├── sales-recorded.png
+    ├── analytics.png
+    └── analytics-2.png
 ```
 
 ## Future Enhancements
