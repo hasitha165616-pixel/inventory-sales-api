@@ -1,0 +1,330 @@
+{
+	"info": {
+		"_postman_id": "inventory-sales-analytics-api",
+		"name": "Inventory + Sales Analytics API",
+		"description": "Complete API testing collection for Inventory Management System with Sales Analytics",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "🏠 API Home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "5000",
+					"path": [""]
+				},
+				"description": "Get API information and available endpoints"
+			},
+			"response": []
+		},
+		{
+			"name": "📦 Products",
+			"item": [
+				{
+					"name": "Get All Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/products",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "5000",
+							"path": ["products"]
+						},
+						"description": "Retrieve all products from inventory"
+					},
+					"response": []
+				},
+				{
+					"name": "Add New Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Wireless Headphones\",\n    \"price\": 149.99,\n    \"stock\": 25\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/products",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "5000",
+							"path": ["products"]
+						},
+						"description": "Add a new product to inventory"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"price\": 139.99,\n    \"stock\": 30\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/products/1",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "5000",
+							"path": ["products", "1"]
+						},
+						"description": "Update product information (change product_id as needed)"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/products/1",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "5000",
+							"path": ["products", "1"]
+						},
+						"description": "Delete a product from inventory (change product_id as needed)"
+					},
+					"response": []
+				}
+			],
+			"description": "Product management endpoints"
+		},
+		{
+			"name": "💰 Sales",
+			"item": [
+				{
+					"name": "Record Sale",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_id\": 1,\n    \"quantity\": 2\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/sales",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "5000",
+							"path": ["sales"]
+						},
+						"description": "Record a new sale (automatically reduces stock)"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Sales",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/sales",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "5000",
+							"path": ["sales"]
+						},
+						"description": "Retrieve all sales records"
+					},
+					"response": []
+				}
+			],
+			"description": "Sales management endpoints"
+		},
+		{
+			"name": "📊 Analytics",
+			"item": [
+				{
+					"name": "Revenue Summary",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/analytics/revenue",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "5000",
+							"path": ["analytics", "revenue"]
+						},
+						"description": "Get total revenue from all sales"
+					},
+					"response": []
+				},
+				{
+					"name": "Low Stock Alert",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/analytics/low-stock",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "5000",
+							"path": ["analytics", "low-stock"]
+						},
+						"description": "Get products with low stock (≤5 units)"
+					},
+					"response": []
+				},
+				{
+					"name": "Top Selling Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/analytics/top-products",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "5000",
+							"path": ["analytics", "top-products"]
+						},
+						"description": "Get top 5 best-selling products"
+					},
+					"response": []
+				},
+				{
+					"name": "Complete Analytics Summary",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/analytics/summary",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "5000",
+							"path": ["analytics", "summary"]
+						},
+						"description": "Get complete analytics overview"
+					},
+					"response": []
+				}
+			],
+			"description": "Business analytics endpoints"
+		},
+		{
+			"name": "🧪 Error Testing",
+			"item": [
+				{
+					"name": "Invalid Product Data",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Invalid Product\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/products",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "5000",
+							"path": ["products"]
+						},
+						"description": "Test error handling with missing required fields"
+					},
+					"response": []
+				},
+				{
+					"name": "Insufficient Stock Sale",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_id\": 1,\n    \"quantity\": 999\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/sales",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "5000",
+							"path": ["sales"]
+						},
+						"description": "Test error handling when trying to sell more than available stock"
+					},
+					"response": []
+				},
+				{
+					"name": "Non-existent Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/products/99999",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "5000",
+							"path": ["products", "99999"]
+						},
+						"description": "Test 404 error for non-existent product"
+					},
+					"response": []
+				}
+			],
+			"description": "Test error handling and edge cases"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:5000",
+			"type": "string"
+		}
+	]
+}
