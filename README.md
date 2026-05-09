@@ -134,13 +134,13 @@ Perfect for Python backend developer roles - demonstrates real-world e-commerce/
 ## 📸 Screenshots
 
 ### Dashboard Overview
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](screenshots/Dashboard.png)
 
 ### Product Management
 ![Product Added](screenshots/product-added.png)
 
 ### Sales Recording
-![Sales](screenshots/sales.png)
+![Sales](screenshots/Sales.png)
 
 ### Sales Successfully Recorded
 ![Sales Recorded](screenshots/sales-recorded.png)
